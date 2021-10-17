@@ -5,6 +5,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 class Woman implements Product{
   Firestore firestore=Firestore.instance;
 
+
+  @override
+  String? productId;
+
   @override
   String? productDetails;
 
@@ -32,6 +36,7 @@ class Woman implements Product{
         .document()
         .setData({
       'imageUrl': imgurl,
+      'Product_Id':productId.toString(),
       'name': productName.toString(),
       'price': productPrice.toString(),
       'details': productDetails.toString()
@@ -40,11 +45,13 @@ class Woman implements Product{
     //throw UnimplementedError();
   }
 
-  Woman(var productImage,String productName,String productPrice,String productDetails){
+  Woman(var productImage,String productName,String productPrice,String productDetails,String productId){
+    this.productId=productId;
     this.productImage=productImage;
     this.productName=productName;
     this.productPrice=productPrice;
     this.productDetails=productDetails;
   }
+
 
 }

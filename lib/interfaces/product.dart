@@ -6,6 +6,7 @@ class Product{
   String? productName;
   String? productPrice;
   String? productDetails;
+  String? productId;
 //  setProducts(var _productImage,String productName,String productPrice,String ProductDetails){
 //    this.productImage=_productImage;
 //    this.productName=productName;

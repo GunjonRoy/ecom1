@@ -21,6 +21,7 @@ class _AdminState extends State<Admin> {
   final TextEditingController _cntProductName = TextEditingController();
   final TextEditingController _cntProductPrice = TextEditingController();
   final TextEditingController _cntProductDetails = TextEditingController();
+  final TextEditingController _cntProductId = TextEditingController();
 
   String? category;
   String? productchose;
@@ -55,6 +56,7 @@ class _AdminState extends State<Admin> {
                     children: [
                       _buildMenubar(),
                       _buildImagePicker(),
+                      _buildProductId(),
                       _buildProductName(),
                       _buildProductPrice(),
                       _buildProductDetails(),
@@ -235,27 +237,27 @@ class _AdminState extends State<Admin> {
           if (category == "Women") {
             print("women");
             Woman(imageFile, _cntProductName.text, _cntProductPrice.text,
-                    _cntProductDetails.text)
+                    _cntProductDetails.text,_cntProductId.text)
                 .update();
           } else if (category == "Men") {
             print("men");
             Man(imageFile, _cntProductName.text, _cntProductPrice.text,
-                    _cntProductDetails.text)
+                    _cntProductDetails.text,_cntProductId.text)
                 .update();
           } else if (category == "Devices") {
             print("Device");
             Device(imageFile, _cntProductName.text, _cntProductPrice.text,
-                    _cntProductDetails.text)
+                    _cntProductDetails.text,_cntProductId.text)
                 .update();
           } else if (category == "Kids") {
             print("Kids");
             Kids(imageFile, _cntProductName.text, _cntProductPrice.text,
-                    _cntProductDetails.text)
+                    _cntProductDetails.text,_cntProductId.text)
                 .update();
           } else if (category == "electronics") {
             print("electronics");
             Electronics(imageFile, _cntProductName.text, _cntProductPrice.text,
-                    _cntProductDetails.text)
+                    _cntProductDetails.text,_cntProductId.text)
                 .update();
           } else {
             showDialog(
@@ -309,6 +311,27 @@ class _AdminState extends State<Admin> {
                 style: TextStyle(color: Colors.white),
               ));
         }).toList(),
+      ),
+    );
+  }
+
+  Widget _buildProductId() {
+    return Padding(
+      padding: const EdgeInsets.only(left: 30, right: 30),
+      child: TextFormField(
+        controller: _cntProductId,
+        maxLines: 1,
+        keyboardType: TextInputType.text,
+        decoration: InputDecoration(
+            border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
+            filled: true,
+            labelText: "Product Id"),
+        validator: (value) {
+          if (value == null || value.isEmpty) {
+            return "Enter product ID";
+          }
+          return null;
+        },
       ),
     );
   }

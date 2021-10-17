@@ -31,6 +31,7 @@ class Kids implements Product{
         .document()
         .setData({
       'imageUrl': imgurl,
+      'Product_Id':productId.toString(),
       'name': productName.toString(),
       'price': productPrice.toString(),
       'details': productDetails.toString()
@@ -38,11 +39,15 @@ class Kids implements Product{
     // TODO: implement update
     //throw UnimplementedError();
   }
-  Kids(var productImage,String productName,String productPrice,productDetails){
+  Kids(var productImage,String productName,String productPrice,productDetails,String productId){
+    this.productId=productId;
     this.productImage=productImage;
     this.productName=productName;
     this.productPrice=productPrice;
     this.productDetails=productDetails;
   }
+
+  @override
+  String? productId;
 
 }

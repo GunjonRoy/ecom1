@@ -338,7 +338,8 @@ class _HomePageState extends State<HomePage> {
                                     document['name'] ?? '',
                                     document['details'] ?? '',
                                     document['price'] ?? '',
-                                    document['imageUrl'] ?? ''
+                                    document['imageUrl'] ?? '',
+                                    document['Product_Id'] ?? ''
                                 )));
 
                       },
@@ -490,7 +491,8 @@ class _HomePageState extends State<HomePage> {
                                         document['name'] ?? '',
                                         document['details'] ?? '',
                                         document['price'] ?? '',
-                                        document['imageUrl'] ?? ''
+                                        document['imageUrl'] ?? '',
+                                        document['Product_Id'] ?? ''
                                     )));
 
                           },

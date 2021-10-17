@@ -41,7 +41,8 @@ dependencies:
   firebase_storage: ^2.1.1+2
   flutter_signin_button:
   email_auth: ^0.0.1+4
-  font_awesome_flutter: ^9.1.0
+  bottom_sheet: ^1.0.3
+  flutter_rating_bar: ^4.0.0
 
 
 dev_dependencies:

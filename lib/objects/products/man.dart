@@ -82,6 +82,7 @@ class Man implements Product {
         .document()
         .setData({
       'imageUrl': imgurl,
+      'Product_Id':productId.toString(),
       'name': productName.toString(),
       'price': productPrice.toString(),
       'details': productDetails.toString()
@@ -90,9 +91,9 @@ class Man implements Product {
 
   }
 
-  Man(var _productImage, String productName, String productPrice,
-      String productDetails) {
+  Man(var _productImage, String productName, String productPrice,String productDetails,String productId) {
     this.productImage = _productImage;
+    this.productId=productId;
     this.productName = productName;
     this.productPrice = productPrice;
     this.productDetails = productDetails;
@@ -100,6 +101,9 @@ class Man implements Product {
     // TODO: implement setter
     //throw UnimplementedError();
   }
+
+  @override
+  String? productId;
 
 //  setProducts(_productImage, String productName, String productPrice, String ProductDetails) {
 //    // TODO: implement setProducts

@@ -31,6 +31,7 @@ class Electronics implements Product{
         .document()
         .setData({
       'imageUrl': imgurl,
+      'Product_Id':productId.toString(),
       'name': productName.toString(),
       'price': productPrice.toString(),
       'details': productDetails.toString()
@@ -39,11 +40,15 @@ class Electronics implements Product{
     //throw UnimplementedError();
   }
 
-  Electronics(var productImage,String productName,String productPrice,productDetails){
+  Electronics(var productImage,String productName,String productPrice,String productDetails,String productId){
+    this.productId=productId;
     this.productImage=productImage;
     this.productName=productName;
     this.productPrice=productPrice;
     this.productDetails=productDetails;
   }
+
+  @override
+  String? productId;
 
 }
