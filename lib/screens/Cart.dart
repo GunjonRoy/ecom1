@@ -7,13 +7,12 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
 class Cart extends StatefulWidget {
   @override
   _CartState createState() => _CartState();
 }
-
 class _CartState extends State<Cart> {
+
   FirebaseUser? user;
   Future<void> getUserData() async {
     FirebaseUser userData = await FirebaseAuth.instance.currentUser();
@@ -30,7 +29,6 @@ class _CartState extends State<Cart> {
       _category,
       quantity,
       productID;
-
   var total=0;
   @override
   void initState() {
@@ -43,6 +41,7 @@ class _CartState extends State<Cart> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       backgroundColor: Color(0xFFe99400),
       appBar: AppBar(
         backgroundColor: Color(0xFFe99400),
@@ -80,7 +79,7 @@ class _CartState extends State<Cart> {
                     this.pic = document['imageUrl'] ?? '';
                     this.productID = document['Product_Id'] ?? '';
                     this.quantity = document['count'] ?? ' no quantity is here';
-                    this.total=this.total+(int.parse(this.quantity.toString())*int.parse(this.price.toString()));
+                    //this.total=this.total+((int.parse(this.quantity.toString())*int.parse(this.price.toString())));
                     return Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Container(
@@ -227,6 +226,9 @@ class _CartState extends State<Cart> {
                   try {
                     count = 0;
                     //total=0;
+                    setState(() {
+                      this.total=this.total-0;
+                    });
                     FirebaseUser user =
                         await FirebaseAuth.instance.currentUser();
                     final CollectionReference userRef =
@@ -249,7 +251,9 @@ class _CartState extends State<Cart> {
                 } else {
                   try {
                     count--;
-                    //total=total-int.parse(_price.toString());
+                    setState(() {
+                      this.total=this.total-int.parse(_price.toString());
+                    });
                     FirebaseUser user =
                         await FirebaseAuth.instance.currentUser();
                     final CollectionReference userRef =
@@ -288,7 +292,10 @@ class _CartState extends State<Cart> {
                 //setState((){
                 try {
                   count++;
-                  //total=total+int.parse(_price.toString());
+                  //this.total=this.total+int.parse(_price.toString());
+                  setState(() {
+                    this.total=this.total+int.parse(_price.toString());
+                  });
                   FirebaseUser user = await FirebaseAuth.instance.currentUser();
                   final CollectionReference userRef =
                       Firestore.instance.collection('E-Commerce');

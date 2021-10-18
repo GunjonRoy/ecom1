@@ -37,8 +37,7 @@ class _DetailsState extends State<Details> {
   }
 
   String? uid;
-  var quantity = 1;
-
+  var quantity = 0;
   Future<void> sendDataProduct() async {
     //FirebaseUser user = await FirebaseAuth.instance.currentUser();
 //    await DataBaseProductService(uid: user.uid)
@@ -170,7 +169,7 @@ class _DetailsState extends State<Details> {
                     _showSheet(productID.toString(),
                         product_name.toString(), product_details.toString(),false);
                   },
-                  child: Text(""),
+                  child: Text("Reviews"),
                 ),
               )
             ],
