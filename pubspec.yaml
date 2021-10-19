@@ -43,6 +43,7 @@ dependencies:
   email_auth: ^0.0.1+4
   bottom_sheet: ^1.0.3
   flutter_rating_bar: ^4.0.0
+  status_change: ^2.0.0
 
 
 dev_dependencies:

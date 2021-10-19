@@ -1,5 +1,6 @@
 //import 'package:e_commerce/E-Com/detail.dart';
 import 'package:ecommercedemo/dataBase/userDataBase.dart';
+import 'package:ecommercedemo/screens/CheckOut_page.dart';
 import 'package:ecommercedemo/screens/profile_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -371,7 +372,7 @@ class _CartState extends State<Cart> {
                       ),
                       onPressed: () {
                         //sendDataProduct();
-                        //Navigator.push(context, MaterialPageRoute(builder: (context)=>Cart()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>CheckOut()));
                       },
                       child: Text('CHECKOUT',style: TextStyle(color: Colors.white,fontSize: 20),)
                   ),
