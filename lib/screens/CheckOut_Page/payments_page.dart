@@ -1,5 +1,7 @@
+import 'package:ecommercedemo/screens/CheckOut_Page/Wallet/Cards_page.dart';
 import 'package:ecommercedemo/screens/CheckOut_Page/address_Page.dart';
 import 'package:ecommercedemo/screens/Home_page.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Payments extends StatefulWidget {
@@ -140,20 +142,54 @@ class _PaymentsState extends State<Payments> {
 
                 Padding(
                     padding: const EdgeInsets.only(left: 22.0,top: 30,right: 22),
-                    child: TextFormField(
-                      maxLines: 1,
-                      controller: _cardNumber,
-                      style: TextStyle(color: Colors.white),
-                      decoration: InputDecoration(
-                          labelText: 'Card Number',
-                          labelStyle: TextStyle(color: Colors.white70),
-                          focusedBorder: UnderlineInputBorder(
-                            borderSide: new BorderSide(color: Colors.white),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Flexible(
+                          child: TextFormField(
+                            maxLines: 1,
+                            controller: _cardNumber,
+                            style: TextStyle(color: Colors.white),
+                            decoration: InputDecoration(
+                                labelText: 'Card Number',
+                                labelStyle: TextStyle(color: Colors.white70),
+                                focusedBorder: UnderlineInputBorder(
+                                  borderSide: new BorderSide(color: Colors.white),
+                                ),
+                                enabledBorder: UnderlineInputBorder(
+                                    borderSide: BorderSide(color: Colors.white)
+                                )
+                            ),
                           ),
-                          enabledBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(color: Colors.white)
-                          )
-                      ),
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            InkWell(
+                              onTap: (){
+                                Navigator.push(context, MaterialPageRoute(builder: (context)=>Cards()));
+                              },
+                              child: SizedBox(
+
+                                height: 30,
+                                width: 50,
+                                child: Image(image: AssetImage("images/masterCardmain.png"),fit: BoxFit.cover,)
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.only(
+                                top: 10,
+                                bottom: 0
+                              ),
+                              color: Colors.white70,
+                              height: 1,
+                              width: MediaQuery.of(context).size.width*.12,
+                            )
+                          ],
+                        )
+                      ],
                     )
                 ),
                 Padding(
@@ -264,7 +300,8 @@ class _PaymentsState extends State<Payments> {
                               //Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage('electronics')));
                               Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => HomePage('electronics')), (route) => false);
                             },
-                            child: Text("Next",style: TextStyle(color: Colors.black),)
+                            child: Text("Next",style: TextStyle(color: Colors.black),
+                            )
                         ),
                       ),
                     ],

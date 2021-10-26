@@ -238,7 +238,7 @@ class _SignInState extends State<SignIn> {
           }
           else{
             AuthServices().signInWithEmailAndPassword(_cntEmail.text, _cntPassword.text).then((value) {
-              Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>HomePage("")), (route) => false); ;
+              Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>HomePage("")), (route) => false);
             });
 
           }

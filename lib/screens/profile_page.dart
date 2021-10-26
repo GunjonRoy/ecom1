@@ -1,5 +1,6 @@
 
 import 'package:ecommercedemo/screens/CheckOut_Page/address_Page.dart';
+import 'package:ecommercedemo/screens/Order%20History/Order_State_page.dart';
 import 'package:ecommercedemo/screens/WishList/wishList_page.dart';
 import 'Order History/Order_HIstory.dart';
 import 'package:ecommercedemo/screens/edie_profile_page.dart';
@@ -169,19 +170,24 @@ class _ProfileState extends State<Profile> {
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 30, top: 33),
-                child: Row(
-                  children: [
-                    Container(
-                      color: Colors.yellow,
-                      height: MediaQuery.of(context).size.height * 0.05,
-                      width: MediaQuery.of(context).size.width * 0.1,
-                      child: Icon(Icons.folder),
-                    ),
-                    SizedBox(width: MediaQuery.of(context).size.width * 0.08,),
-                    Text('Track Order',style: TextStyle(color: Colors.white,fontSize: 20),)
-                  ],
+              InkWell(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>OrderState()));
+                },
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 30, top: 33),
+                  child: Row(
+                    children: [
+                      Container(
+                        color: Colors.yellow,
+                        height: MediaQuery.of(context).size.height * 0.05,
+                        width: MediaQuery.of(context).size.width * 0.1,
+                        child: Icon(Icons.folder),
+                      ),
+                      SizedBox(width: MediaQuery.of(context).size.width * 0.08,),
+                      Text('Track Order',style: TextStyle(color: Colors.white,fontSize: 20),)
+                    ],
+                  ),
                 ),
               ),
               Padding(

@@ -30,7 +30,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final size=MediaQuery.of(context).size;
     return Scaffold(
-      //backgroundColor: Colors.white,
+      backgroundColor: Color(0xffe7b35a),
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Padding(
@@ -76,121 +76,128 @@ class _HomePageState extends State<HomePage> {
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
                   decoration: BoxDecoration(
-                      color: Color(0xffffaf38),
+                      //color: Color(0xffffaf38),
                     borderRadius: BorderRadius.circular(15)
                   ),
                   alignment: Alignment.center,
                   height: 100,
                   width: size.width,
-                  child: SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Column(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text("Categories",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w600,fontSize: 23),),
+                      SizedBox(height: 20,),
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                  primary: Colors.black,
-                                  shape: CircleBorder(),
-                                  //padding: EdgeInsets.all(30)
-                                ),
-                                  onPressed: (){
-                                  mode=1;
-                                  Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>HomePage('Kids')), (route) => false);
+                              Column(
+                                children: [
+                                  ElevatedButton(
+                                    style: ElevatedButton.styleFrom(
+                                      primary: Colors.black,
+                                      shape: CircleBorder(),
+                                      //padding: EdgeInsets.all(30)
+                                    ),
+                                      onPressed: (){
+                                      mode=1;
+                                      Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>HomePage('Kids')), (route) => false);
 
-                                  },
-                                  child: CircleAvatar(
-                                    backgroundImage: AssetImage("images/kids.png"),
-                                    radius: 30,
+                                      },
+                                      child: CircleAvatar(
+                                        backgroundImage: AssetImage("images/kids.png"),
+                                        radius: 30,
+                                      ),
                                   ),
+                                  Text("Kids")
+                                ],
                               ),
-                              Text("Kids")
+                              Column(
+                                children: [
+                                  ElevatedButton(
+                                    style: ElevatedButton.styleFrom(
+                                      primary: Colors.white,
+                                      shape: CircleBorder(),
+                                      //padding: EdgeInsets.all(30)
+                                    ),
+                                    onPressed: (){
+                                      mode=2;
+                                      Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>HomePage('Device')), (route) => false);
+                                    },
+                                    child: CircleAvatar(
+                                      backgroundImage: AssetImage("images/mensitem.png"),
+                                      radius: 30,
+                                    ),
+                                  ),
+                                  Text('Devices')
+                                ],
+                              ),
+                              Column(
+                                children: [
+                                  ElevatedButton(
+                                      onPressed: (){
+                                        mode=3;
+                                        Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>HomePage('men')), (route) => false);
+                                      },
+                                      child: CircleAvatar(
+                                        backgroundImage: AssetImage("images/men's.png"),
+                                        radius: 30,
+                                      ),
+                                    style: ElevatedButton.styleFrom(
+                                      primary: Colors.white,
+                                      shape: CircleBorder()
+                                    ),
+                                  ),
+                                  Text("Men's")
+                                ],
+                              ),
+                              Column(
+                                children: [
+                                  ElevatedButton(
+                                      onPressed: (){
+                                        mode=4;
+                                        Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>HomePage("Women")), (route) => false);
+                                      },
+                                      child: CircleAvatar(
+                                        backgroundImage: AssetImage("images/girls.png"),
+                                        radius: 30,
+                                      ),
+                                    style: ElevatedButton.styleFrom(
+                                      primary: Colors.white,
+                                      shape: CircleBorder()
+                                    ),
+                                  ),
+                                  Text("Women")
+                                ],
+                              ),
+                              Column(
+                                children: [
+                                  ElevatedButton(
+                                      onPressed: (){
+                                        mode=5;
+                                        Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>HomePage('electronics')), (route) => false);
+                                      },
+                                      child: CircleAvatar(
+                                        backgroundImage: AssetImage("images/Devices.png"),
+                                        radius: 30,
+                                      ),
+                                    style: ElevatedButton.styleFrom(
+                                      primary: Colors.white,
+                                      shape: CircleBorder()
+                                    ),
+                                  ),
+                                  Text("Electronics")
+                                ],
+                              )
                             ],
                           ),
-                          Column(
-                            children: [
-                              ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                  primary: Colors.white,
-                                  shape: CircleBorder(),
-                                  //padding: EdgeInsets.all(30)
-                                ),
-                                onPressed: (){
-                                  mode=2;
-                                  Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>HomePage('Device')), (route) => false);
-                                },
-                                child: CircleAvatar(
-                                  backgroundImage: AssetImage("images/mensitem.png"),
-                                  radius: 30,
-                                ),
-                              ),
-                              Text('Devices')
-                            ],
-                          ),
-                          Column(
-                            children: [
-                              ElevatedButton(
-                                  onPressed: (){
-                                    mode=3;
-                                    Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>HomePage('men')), (route) => false);
-                                  },
-                                  child: CircleAvatar(
-                                    backgroundImage: AssetImage("images/men's.png"),
-                                    radius: 30,
-                                  ),
-                                style: ElevatedButton.styleFrom(
-                                  primary: Colors.white,
-                                  shape: CircleBorder()
-                                ),
-                              ),
-                              Text("Men's")
-                            ],
-                          ),
-                          Column(
-                            children: [
-                              ElevatedButton(
-                                  onPressed: (){
-                                    mode=4;
-                                    Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>HomePage("Women")), (route) => false);
-                                  },
-                                  child: CircleAvatar(
-                                    backgroundImage: AssetImage("images/girls.png"),
-                                    radius: 30,
-                                  ),
-                                style: ElevatedButton.styleFrom(
-                                  primary: Colors.white,
-                                  shape: CircleBorder()
-                                ),
-                              ),
-                              Text("Women")
-                            ],
-                          ),
-                          Column(
-                            children: [
-                              ElevatedButton(
-                                  onPressed: (){
-                                    mode=5;
-                                    Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>HomePage('electronics')), (route) => false);
-                                  },
-                                  child: CircleAvatar(
-                                    backgroundImage: AssetImage("images/Devices.png"),
-                                    radius: 30,
-                                  ),
-                                style: ElevatedButton.styleFrom(
-                                  primary: Colors.white,
-                                  shape: CircleBorder()
-                                ),
-                              ),
-                              Text("Electronics")
-                            ],
-                          )
-                        ],
+                        ),
                       ),
-                    ),
+                    ],
                   ),
                 ),
               ),
@@ -201,7 +208,7 @@ class _HomePageState extends State<HomePage> {
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
                   decoration: BoxDecoration(
-                    color: Color(0xffffaf38),
+                    //color: Color(0xffffaf38),
                     borderRadius: BorderRadius.circular(15)
                   ),
 
@@ -258,7 +265,9 @@ class _HomePageState extends State<HomePage> {
               width: MediaQuery.of(context).size.width * 0.03,
             ),
             FlatButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>HomePage("")), (route) => false);
+                },
                 child: Text(
                   'Explore',
                   style: TextStyle(color: Color(0xFFfca903)),
@@ -326,7 +335,7 @@ class _HomePageState extends State<HomePage> {
                   children: snapshot.data!.documents.map((document){
                     return ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        primary: Color(0xFFff9f36)
+                        primary: Color(0xffe7b35a)
                       ),
                       onPressed:(){
 
@@ -354,13 +363,17 @@ class _HomePageState extends State<HomePage> {
                                 //BoxDecoration(color: Colors.black)
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.all(
-                                      Radius.circular(15),
+                                      Radius.circular(0),
                                     ),
                                     side:
                                     BorderSide(color: Colors.black)),
                                 child: Container(
-                                  height: MediaQuery.of(context).size.height * 0.35,
-                                  width: MediaQuery.of(context).size.width * 0.45,
+//                                  decoration: BoxDecoration(
+//                                    borderRadius: BorderRadius.circular(100)
+//                                  ),
+                                  height: MediaQuery.of(context).size.height * 0.39,
+                                  width: MediaQuery.of(context).size.width * 0.55,
+                                  alignment: Alignment.center,
                                   child: Image(
                                       image: NetworkImage(
                                           document['imageUrl'] ?? '')),
@@ -568,9 +581,89 @@ class _HomePageState extends State<HomePage> {
       return _buildListView(mode);
     }
     else{
-      return _buildListView('women');
+      return _buildBestSell();
         //_buildListView('women');
     }
+  }
+  Widget _buildBestSell(){
+    return Container(
+      child: Column(
+        children: [
+          Row(
+            children: [
+              Text("Best Selling",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w900,fontSize: 20),),
+              Expanded(child: Row(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text("Best Selling",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w900,fontSize: 20),),
+                ],
+              ))
+            ],
+          ),
+          Expanded(
+              child: Row(
+                children: [
+                  Expanded(
+                    flex:1,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: Image(
+                            image: AssetImage("images/p1.PNG",),
+                            fit: BoxFit.cover,
+                            height: MediaQuery.of(context).size.height * 0.35,
+                            width: MediaQuery.of(context).size.width * 0.45,
+                          ),
+                        ),
+                        SizedBox(height: 5,),
+                        Text("XYZ earphone",style: TextStyle(color: Colors.white,fontSize: 20),),
+                        Text("XION",style: TextStyle(color: Colors.white,fontSize: 10),),
+                        Text("\$35",style: TextStyle(color: Colors.white,fontSize: 15),),
+                      ],
+                    ),
+                  ),
+                  SizedBox(width: 10,),
+                  Expanded(
+                      flex:1,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(10),
+                            child: Image(
+                              image: AssetImage("images/p2.PNG",),
+                              fit: BoxFit.cover,
+                              height: MediaQuery.of(context).size.height * 0.35,
+                              width: MediaQuery.of(context).size.width * 0.45,
+                            ),
+                          ),
+                          SizedBox(height: 5,),
+                          Text("XYZ earphone",style: TextStyle(color: Colors.white,fontSize: 20),),
+                          Text("XION",style: TextStyle(color: Colors.white,fontSize: 10),),
+                          Text("\$35",style: TextStyle(color: Colors.white,fontSize: 15),),
+                        ],
+                      ),
+
+
+//                  Text("Best Selling",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w900,fontSize: 20),),
+//                  Expanded(child: Row(
+//                    crossAxisAlignment: CrossAxisAlignment.end,
+//                    mainAxisAlignment: MainAxisAlignment.end,
+//                    children: [
+//                      Text("Best Selling",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w900,fontSize: 20),),
+//                    ],
+                  )
+                ],
+              )
+          )
+        ],
+      ),
+    );
   }
 
 }

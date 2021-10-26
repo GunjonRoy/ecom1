@@ -172,21 +172,6 @@ class _DeliveryState extends State<Delivery> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-//                      SizedBox(
-//                        height: 40,
-//                        width: 100,
-//                        child: ElevatedButton(
-//                            style: ElevatedButton.styleFrom(
-//                              side: BorderSide(color: Color(0xffe99400),width: 3),
-//                                primary: Colors.white,
-//                            ),
-//                            onPressed: (){
-//                              Navigator.push(context, MaterialPageRoute(builder: (context)=>Address()));
-//                              //Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => Address()), (route) => false);
-//                            },
-//                            child: Text("Back",style: TextStyle(color: Colors.black),)
-//                        ),
-//                      ),
                       SizedBox(width: 120,),
                       SizedBox(
                         height: 40,
